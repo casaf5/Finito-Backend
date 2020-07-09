@@ -1,38 +1,30 @@
 [
   {
-    "_id": 24258,
-    "name": "checkcheck",
-    "price": "11",
-    "type": "educational",
-    "createdAt": "1994-11-25T02:39:13.274Z",
-    "inStock": "false"
+    "name": "added new toyyy finally",
+    "price": 3,
+    "type": "funny",
+    "inStock": false,
+    "createdAt": 1594279598552,
+    "_id": "MOT6Q1YQTS"
   },
   {
-    "_id": 24262,
-    "name": "checkkkkkk",
-    "price": 73,
-    "type": "Educational",
-    "createdAt": "1987-02-07T08:25:27.570Z",
-    "inStock": true
+    "name": "finalllyyyy",
+    "price": 5,
+    "type": "adult",
+    "inStock": false,
+    "createdAt": 1594275626728,
+    "_id": "1LWXWJ5PQY"
   },
   {
-    "_id": 24267,
-    "name": "molestie dui",
-    "price": 15,
-    "type": "Adult",
-    "createdAt": "1988-02-21T13:47:41.552Z",
-    "inStock": true
+    "name": "edited onlineeee",
+    "price": 4,
+    "type": "adult",
+    "inStock": "true",
+    "createdAt": 1594275551455,
+    "_id": "XCGF1H2OVH"
   },
   {
-    "_id": 24268,
-    "name": "odio egestas",
-    "price": 15,
-    "type": "Adult",
-    "createdAt": "1981-03-15T00:00:11.635Z",
-    "inStock": true
-  },
-  {
-    "_id": 24269,
+    "_id": "APIDJFDF3",
     "name": "amet amet",
     "price": 74,
     "type": "Adult",
@@ -40,7 +32,7 @@
     "inStock": true
   },
   {
-    "_id": 24270,
+    "_id": "ADSIOJD3",
     "name": "tincidunt placerat",
     "price": 1,
     "type": "Educational",
@@ -48,15 +40,7 @@
     "inStock": true
   },
   {
-    "_id": 24271,
-    "name": "facilisis tincidunt",
-    "price": 53,
-    "type": "Funny",
-    "createdAt": "1979-08-18T15:24:56.796Z",
-    "inStock": false
-  },
-  {
-    "_id": 24272,
+    "_id": "OICVB22",
     "name": "vitae aliquam",
     "price": 72,
     "type": "Adult",
@@ -64,7 +48,7 @@
     "inStock": false
   },
   {
-    "_id": 24274,
+    "_id": "OPOKDF55",
     "name": "id mattis",
     "price": 6,
     "type": "Funny",
@@ -73,26 +57,26 @@
   },
   {
     "name": "sdfdf",
-    "price": "5",
+    "price": 5,
     "type": "adult",
     "inStock": "true",
     "createdAt": 1594146388705,
-    "_id": 24276
+    "_id": "APODFK3"
   },
   {
-    "name": "addme neeww",
-    "price": "6",
+    "name": "edited with poastman",
+    "price": 6,
     "type": "funny",
     "inStock": "true",
     "createdAt": 1594146475480,
-    "_id": 24277
+    "_id": "098PXC"
   },
   {
     "name": "addme neeww",
-    "price": "6",
+    "price": 6,
     "type": "funny",
     "inStock": "true",
     "createdAt": 1594146475481,
-    "_id": 24278
+    "_id": "OJCXOVI22"
   }
 ]

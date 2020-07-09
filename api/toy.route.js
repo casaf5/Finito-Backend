@@ -1,13 +1,14 @@
 const toyService=require('../services/toy-service.js')
 const express=require('express')
+const { json } = require('body-parser')
 const router=express.Router()
 module.exports=router
 
 // LIST
 
 router.get('/',(req,res)=>{
-   
-    toyService.query()
+   const filterBy=req.query
+    toyService.query(filterBy)
     .then(toys=>{
         res.json(toys)
     })
@@ -37,20 +38,17 @@ router.delete('/:id',(req,res)=>{
 //UPDATE
 
 router.put('/:id',(req,res)=>{
-    const toyId=req.params.id
-    toyService.save(toyId)
-    .then((toy)=>{
-        res.json('Saved Toy', toy)
-    })
+    const toy=req.body
+    toyService.save(toy)
+    .then(savedToy=>res.json(savedToy))
+    .catch(err=>res.end("Problem Updating Toy",err))
 })
 
 //ADD
 
-
-router.put('/',(req,res)=>{
+router.post('/',(req,res)=>{
     const toy=req.body
     toyService.save(toy)
-    .then((toy)=>{
-        res.json('Saved Toy', toy)
-    })
+    .then(savedToy=>res.json(savedToy))
+    .catch(err=>res.end("Problem Saving",err))
 })
