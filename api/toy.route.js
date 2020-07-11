@@ -17,7 +17,6 @@ router.get('/',(req,res)=>{
 
 router.get('/:id',(req,res)=>{
     const toyId=req.params.id
-    console.log('toyId',toyId)
     toyService.getById(toyId)
     .then(toy=>{
         res.json(toy)

@@ -55,6 +55,7 @@ function _update(toy) {
 function _add(toy) {
   toy._id = utils.genID();
   toy.price=+toy.price
+  toy.image=`https://robohash.org/${toy.name}`
   toys.unshift(toy);
   _saveToysToFile();
   return Promise.resolve(toy);
