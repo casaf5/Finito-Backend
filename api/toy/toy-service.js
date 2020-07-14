@@ -15,7 +15,8 @@ async function query(filterBy) {
   const creteria = _buildCreteria(filterBy);
   const collection = await dbService.getCollection("toy");
   try {
-    const toys = await collection.find(creteria).sort(sort).toArray();
+    // const toys = await collection.find(creteria).sort(sort).toArray();
+    const toys = await collection.find().toArray();
 
     return toys;
   } catch (err) {
