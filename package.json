@@ -5,7 +5,7 @@
     "main": "server.js",
     "scripts": {
         "server:dev": "NODE_ENV=development nodemon app.js",
-        "start": "nodemon server.js"
+        "start": "node server.js"
     },
     "author": "moshe pinhasi",
     "license": "ISC",
