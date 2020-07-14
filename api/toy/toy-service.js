@@ -15,9 +15,7 @@ async function query(filterBy) {
   const creteria = _buildCreteria(filterBy);
   const collection = await dbService.getCollection("toy");
   try {
-    // const toys = await collection.find(creteria).sort(sort).toArray();
-    const toys = await collection.find().toArray();
-
+    const toys = await collection.find(creteria).sort(sort).toArray();
     return toys;
   } catch (err) {
     console.log("Problem getting Toys From Server...");
@@ -77,6 +75,5 @@ function _buildCreteria(filterBy) {
   }
   if (filterBy.inStock !== "all") creteria.inStock =filterBy.inStock==='true'?true:false;
   if (filterBy.type !== "all") creteria.type = filterBy.type;
-  console.log('creteria',creteria)
   return creteria;
 }
