@@ -5,7 +5,7 @@ module.exports = {
   getCollection,
 };
 
-const dbName = "msToy";
+const dbName = "FinitoDB";
 let dbConn = null;
 
 async function getCollection(collectionName) {
@@ -17,7 +17,7 @@ async function _connect() {
   if (dbConn) return dbConn;
   try {
     const client = await MongoClient.connect(config.dbURL, {
-      useNewUrlParser: true, dbName:"msToy"
+      useNewUrlParser: true
     });
     const db = client.db(dbName);
     dbConn = db;

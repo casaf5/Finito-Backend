@@ -30,16 +30,14 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // ROUTES
-const toyRoute = require("./api/toy/toy.route");
+const boardRoute = require("./api/board/board.route");
 const authRoutes = require("./api/auth/auth.routes");
 const userRoutes = require("./api/user/user.routes");
-const reviewRoutes = require('./api/review/review.routes')
 const connectSockets = require("./api/socket/socket.routes");
 
-app.use("/api/toy", toyRoute);
+app.use("/api/board", boardRoute);
 app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
-app.use('/api/review', reviewRoutes)
 connectSockets(io);
 
 // LOGGER
