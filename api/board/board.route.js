@@ -5,9 +5,9 @@ const router=express.Router()
 
 router.get('/',getBoards)
 router.get('/:id',getBoard)
-router.delete('/:id',requireAuth,requireAdmin,removeBoard)
-router.put('/:id',requireAuth,requireAdmin,updateBoard)
-router.post('/',requireAuth,requireAdmin,addBoard)
+router.delete('/:id',removeBoard)//add authintication
+router.put('/:id',updateBoard) //add authintication
+router.post('/',addBoard)//add authintication
 
 module.exports=router
 
