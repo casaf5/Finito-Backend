@@ -5,7 +5,7 @@ module.exports = {
   getCollection,
 };
 
-const dbName = "FinitoDB";
+const dbName = "finitoDB";
 let dbConn = null;
 
 async function getCollection(collectionName) {
