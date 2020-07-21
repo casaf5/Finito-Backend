@@ -18,6 +18,7 @@ async function query(filterBy = {}) {
     try {
         const users = await collection.find(criteria).toArray();
         return users
+        // return users.map(user=>delete user.password)
     } catch (err) {
         console.log('ERROR: cannot find users')
         throw err;

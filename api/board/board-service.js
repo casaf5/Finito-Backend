@@ -37,8 +37,8 @@ async function remove(id) {
 async function getById(id) {
   const collection = await dbService.getCollection("board");
   try {
-    const toy = collection.findOne({ _id: ObjectId(id) });
-    return toy;
+    const board = collection.findOne({ _id: ObjectId(id) });
+    return board;
   } catch (err) {
     console.log("Err,Cant find Board...");
     throw err;
