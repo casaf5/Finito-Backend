@@ -16,7 +16,7 @@ async function query(filterBy) {
   const collection = await dbService.getCollection("board");
   try {
     const boards = await collection.find().toArray();
-    console.log('found board:',boards)
+    console.log("found board:", boards);
     return boards;
   } catch (err) {
     console.log("Problem getting Boards From Server...");
@@ -26,6 +26,7 @@ async function query(filterBy) {
 
 async function remove(id) {
   const collection = await dbService.getCollection("board");
+  console.log(id);
   try {
     await collection.deleteOne({ _id: ObjectId(id) });
   } catch (err) {
