@@ -12,24 +12,18 @@ const io = require("socket.io")(http);
 // CONFIG
 app.use(bodyParser.json());
 app.use(cookieParser());
-app.use(
-  session({
-    secret: "dirbalakkk 123",
-    resave: false,
-    saveUninitialized: true,
-    cookie: { secure: false },
-  })
-);
+app.use(session({
+  secret: 'dirbalakkk 123',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false }
+}))
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.resolve(__dirname, "public")));
 } else {
   const corsOptions = {
-    origin: [
-      "http://127.0.0.1:8080",
-      "http://localhost:8080",
-      "http://localhost:8081",
-    ],
+    origin: ["http://127.0.0.1:8080", "http://localhost:8080","http://localhost:8081"],
     credentials: true,
   };
   app.use(cors(corsOptions));

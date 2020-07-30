@@ -8,10 +8,11 @@ function connectSockets(io) {
         socket.leave(socket.board);
       }
       socket.board = boardId;
-      console.log("socket belongs to this board:", socket.board);
       socket.join(boardId);
     });
-
+    // socket.on("boardAction", async (action) => {
+    //   socket.broadcast.to(socket.board).emit("boardAction", action);
+    // });
     socket.on("boardUpdate", async (board) => {
       await BoardService.update(board);
       io.to(socket.board).emit("boardUpdate", board);
