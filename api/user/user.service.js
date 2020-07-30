@@ -44,14 +44,14 @@ async function getById(userId) {
         throw err;
     }
 }
-async function getByUsername(userName) {
+async function getByUsername(username) {
     const collection = await dbService.getCollection('user')
     try {
-        const user = await collection.findOne({userName})
+        const user = await collection.findOne({username})
         console.log(user)
         return user
     } catch (err) {
-        console.log(`ERROR: while finding user ${userName}`)
+        console.log(`ERROR: while finding user ${username}`)
         throw err;
     }
 }
@@ -83,6 +83,7 @@ async function add(user) {
     const collection = await dbService.getCollection('user')
     try {
         user.isAdmin=false
+        user.img=null
         await collection.insertOne(user);
         return user;
     } catch (err) {

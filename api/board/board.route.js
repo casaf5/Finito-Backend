@@ -15,8 +15,8 @@ const router = express.Router();
 
 router.get("/", getBoards);
 router.get("/:id", getBoard);
-router.delete("/:id", removeBoard);
-router.put("/:id", updateBoard);
+router.delete("/:id", requireAuth,removeBoard);
+router.put("/:id",requireAuth, updateBoard);
 router.post("/", addBoard);
 
 module.exports = router;
