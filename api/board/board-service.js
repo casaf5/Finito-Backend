@@ -10,11 +10,22 @@ module.exports = {
 };
 
 async function query(byUser) {
-  console.log('byUser',byUser)
   const collection = await dbService.getCollection("board");
   try {
-    const boards = await collection.find({'creator':byUser}).toArray();
-    console.log('found board:',boards)
+    let boards = await collection.find().toArray();
+    if(byUser!=='Guest'){
+    boards = boards.reduce((acc, board) => {
+      if (board.members.some((member) => member._id === byUser))
+        acc.push(board);
+      return acc;
+    }, []);
+  }else{
+    boards=boards.reduce((acc,board)=>{
+      if(board.creator===byUser)acc.push(board)
+      return acc
+    },[])
+  }
+
     return boards;
   } catch (err) {
     console.log("Problem getting Boards From Server...");

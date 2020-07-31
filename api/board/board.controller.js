@@ -11,7 +11,7 @@ module.exports = {
 
 // LIST
 async function getBoards(req, res) {
-  const byUser = req.session.user?req.session.user._id : "Demo";
+  const byUser = req.session.user?req.session.user._id : "Guest";
   console.log("backend", byUser);
   const boards = await boardService.query(byUser);
   logger.debug(boards);
