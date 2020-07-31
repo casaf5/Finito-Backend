@@ -9,13 +9,12 @@ module.exports = {
   add,
 };
 
-async function query(filterBy) {
-  // const sortBy=filterBy.sort==='name'? 'name':'price'
-  // const sort={[sortBy]:1}
-  // const creteria = _buildCreteria(filterBy);
+async function query(byUser) {
+  console.log("byUser", byUser);
   const collection = await dbService.getCollection("board");
   try {
-    const boards = await collection.find().toArray();
+    const boards = await collection.find({ creator: byUser }).toArray();
+    console.log("found board:", boards);
     return boards;
   } catch (err) {
     console.log("Problem getting Boards From Server...");

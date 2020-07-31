@@ -48,6 +48,7 @@ async function getByUsername(username) {
     const collection = await dbService.getCollection('user')
     try {
         const user = await collection.findOne({username})
+        console.log(user)
         return user
     } catch (err) {
         console.log(`ERROR: while finding user ${username}`)
@@ -82,6 +83,7 @@ async function add(user) {
     const collection = await dbService.getCollection('user')
     try {
         user.isAdmin=false
+        user.img=null
         await collection.insertOne(user);
         return user;
     } catch (err) {

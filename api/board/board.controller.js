@@ -11,8 +11,9 @@ module.exports = {
 
 // LIST
 async function getBoards(req, res) {
-  const filterBy = req.query;
-  const boards = await boardService.query(filterBy);
+  const byUser = req.session.user?req.session.user._id : "Demo";
+  console.log("backend", byUser);
+  const boards = await boardService.query(byUser);
   logger.debug(boards);
   res.json(boards);
 }
@@ -34,17 +35,16 @@ async function removeBoard(req, res) {
 }
 //ADD
 
-async function addBoard(req,res){
-    const board=req.body
-    const addedToy=await boardService.add(board)
-    res.json(addedToy)
+async function addBoard(req, res) {
+  const board = req.body;
+  const addedToy = await boardService.add(board);
+  res.json(addedToy);
 }
 
 //UPDATE
 
-
-async function updateBoard(req,res){
-    const board=req.body
-    const updatedToy=await boardService.update(board)
-    res.json(updatedToy)
+async function updateBoard(req, res) {
+  const board = req.body;
+  const updatedToy = await boardService.update(board);
+  res.json(updatedToy);
 }
